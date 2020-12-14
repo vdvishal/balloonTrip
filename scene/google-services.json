@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "128503897423",
+    "project_id": "balloon-trip-91d9d",
+    "storage_bucket": "balloon-trip-91d9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128503897423:android:d5ac7befd0a66fabfc393a",
+        "android_client_info": {
+          "package_name": "com.brokeDeveloper.BalloonTrip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128503897423-ecoacnn11e4ftuh553j23eo17iepdbsm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpQ78qQz29C3ftMdLEAZmmV6AtSpuj-cE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128503897423-ecoacnn11e4ftuh553j23eo17iepdbsm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

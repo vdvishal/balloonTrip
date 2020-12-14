@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8348194394122326356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8348194394122326358}
+  - component: {fileID: 8348194394122326357}
+  m_Layer: 0
+  m_Name: gameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8348194394122326358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348194394122326356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8348194394122326357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348194394122326356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f665acce0c80f6343ba7a5c721f6bbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cosmeticsArr: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  cosmeticsSelectedNum: -1
+  deathCount: 0
+  playerDied: 0
+  adsDeactivated: 0
+  selectedBalloon: {fileID: 0}
+  sprites:
+  - {fileID: 4436651453443716697, guid: 9a748a730112453448225039273b970b, type: 3}
+  - {fileID: 2937791622967228092, guid: 6687187a141fd0f4eb01c4970f0edd23, type: 3}
+  - {fileID: 8883173917700686363, guid: c3ec4b2613f3dcf45a97d82f4dc99032, type: 3}
+  - {fileID: 1529698125538354545, guid: 4bbfbd6ab90d4294e81f63d773a8bcc8, type: 3}
+  - {fileID: 4573663400101938638, guid: 1dcea2cdd7116724ea7395d33bde5e1e, type: 3}
+  - {fileID: 1444206911099426733, guid: 78dd155b17f90fd4291287c40cce1227, type: 3}
+  - {fileID: 8782591329244478335, guid: 30802b7f0fd92c645a0e62f6bfb680cc, type: 3}
+  - {fileID: 1576187915872714329, guid: 9b0dfe90df5f9eb48a7f698e3a465e5c, type: 3}
+  - {fileID: 1985344671004627978, guid: 1575e4995116f1d4f97bbb22a0330a4e, type: 3}
+  - {fileID: 4815553680873734668, guid: ad09db203b792a44d8f75f9ba312eabb, type: 3}
+  - {fileID: 2932437000531821509, guid: 70a2fc9332bd35340b630d30aa26bb39, type: 3}
+  - {fileID: 5716671557151220547, guid: 0f1c70f0beab81a43be6757f399c950b, type: 3}
+  - {fileID: 385489337096040903, guid: e23bd4d3ef3e1ed4a995d0e3b2f374ef, type: 3}
+  - {fileID: 6184494283506019366, guid: efbca9b9566f7234c8e8c04800fc4839, type: 3}
+  - {fileID: 3707743296098542571, guid: 6ca815d6f63c1af4ab9c982ee43b848d, type: 3}
+  - {fileID: 2975325394550134862, guid: e718539bc1d377446939c0740ba7da4f, type: 3}
+  - {fileID: 4094688293300782859, guid: d0b7b743ddc58684c8592746d459c455, type: 3}
+  - {fileID: 4266444767172970118, guid: c6a0f7db31edcce46970db779d34928a, type: 3}
+  - {fileID: 1864961732629484884, guid: 4300d756c4c19404c9314e25dc33aedb, type: 3}
+  - {fileID: 5872945738780097729, guid: 47daa151dda87bb4ca7727a39cadd034, type: 3}
+  - {fileID: 1373133602174561923, guid: 1918c6f41682f034b888629fb5d4bffb, type: 3}
+  - {fileID: 1203364744007290401, guid: 376b8a0c2fe351d43b639a8b591cbfe8, type: 3}
+  - {fileID: 5694408807033353356, guid: d1c3e570542c78e4eaa1a797597cb6b3, type: 3}
+  - {fileID: 6572716140809125868, guid: 6d8fe15e1a794914bb6a8761f58ea5f1, type: 3}
+  - {fileID: 7608534226982667550, guid: f559e68570e9f5d438d68df7fd673b08, type: 3}
+  - {fileID: 2198771641203232973, guid: bc943dc2190fb1d4792d2dc124d38d6d, type: 3}
+  - {fileID: 4844041111302989899, guid: 2243f626086e7164a97abf6cd0a114a2, type: 3}
+  - {fileID: 3718976732185484459, guid: a3e912f7e1878da468bdf8e56da15973, type: 3}
+  spritesBalloon:
+  - {fileID: 21300000, guid: a1c23265db0872c4fb59a32706dccb27, type: 3}
+  - {fileID: 21300000, guid: 4a954ae42ebedd04da168737b01ec9ef, type: 3}
+  - {fileID: 21300000, guid: 40a1fea8af836fd458689f7b644df3e3, type: 3}
+  - {fileID: 21300000, guid: 677cb10422b724747b856f965bcef04d, type: 3}
+  - {fileID: 21300000, guid: 1c4168cf1492a0a4799d8e6d19405d6d, type: 3}
+  - {fileID: 21300000, guid: 5858804b973f40d4396d4d0779928210, type: 3}
+  - {fileID: 21300000, guid: e526764e86fc1e14eb1b33d9fb548162, type: 3}
+  - {fileID: 21300000, guid: 3e0e336515f181b4aa1a068b86991d5c, type: 3}
+  - {fileID: 21300000, guid: 06fbc7a05fcb47d46bf4e1f6e1cf4026, type: 3}
+  - {fileID: 21300000, guid: b522bc3859013b64a8f90adb455db4bf, type: 3}
+  - {fileID: 21300000, guid: f57b0a85770e8fc419b2193efa61d3d0, type: 3}
+  - {fileID: 21300000, guid: 45e7c808d85d7ea46a66a91d5bafd008, type: 3}
+  - {fileID: 21300000, guid: 768f0f63e3d8d8f45b732a3728f3387f, type: 3}
+  - {fileID: 21300000, guid: 0fe4b78b72d06f342bec4a9f9363cb18, type: 3}
+  - {fileID: 21300000, guid: 5ea212c272f125c4b94e2fcda85b7149, type: 3}
+  - {fileID: 21300000, guid: 0a3554ab69a1bbe4c82715b3971e0a06, type: 3}
+  - {fileID: 21300000, guid: d5a22230d2f273a4f8da7ea5f6ed412e, type: 3}
+  - {fileID: 21300000, guid: 305655bb64d1d5844b67b1f23663ea10, type: 3}
+  - {fileID: 21300000, guid: 06f0da8982a67ac4e955d15df2fcd69c, type: 3}
+  - {fileID: 21300000, guid: d9ee38b33ba2f2148913dfca26fa6c32, type: 3}
+  - {fileID: 21300000, guid: d76fca58cb5ca4a4ab9c5a354c1852f3, type: 3}
+  - {fileID: 21300000, guid: e96dbab3850114744a0d0a132313d222, type: 3}
+  - {fileID: 21300000, guid: 8d51a49a903e73741bd4ce4bff567786, type: 3}
+  - {fileID: 21300000, guid: edb36804cbd5d674fa9999db983ea338, type: 3}
+  - {fileID: 21300000, guid: e37064b0e4e21ac44bb908734bf4666e, type: 3}
+  - {fileID: 1990473760456649278, guid: 71691e583d3e4b246bfe100cabb6e831, type: 3}
+  - {fileID: 21300000, guid: adde62884f021864cb0fdaf70433c149, type: 3}
+  - {fileID: 21300000, guid: 618473dbf56a62043ba78345ebf61e20, type: 3}
+  defaultBalloon: {fileID: 5732363398190279891, guid: f37e572f99974eb4eb4e4b1ddd3572c8,
+    type: 3}
+  balloonsCoins: 0
+  Score: 0
+  HighScore: 0
+  FlightTime: 0
+  LongestFlightTime: 0
+  soundOn: 0
+  soundSprite: {fileID: 0}
+  soundOnSprite: {fileID: 0}
+  soundOffSprite: {fileID: 0}

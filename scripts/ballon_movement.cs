@@ -9,6 +9,10 @@ public class ballon_movement : MonoBehaviour
 
     public Rigidbody2D player;
 
+   //  public GameObject playerSkin;
+
+ 
+
     [HideInInspector]
     public audioManager audioMan;
 
@@ -41,6 +45,9 @@ public class ballon_movement : MonoBehaviour
         gameManager.Score = 0;
 
         startTime = Time.time;
+
+        player.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = gameManager.instance.selectedBalloon;
+
     }
 
     // Update is called once per frame
@@ -70,7 +77,7 @@ public class ballon_movement : MonoBehaviour
             moveRight();
         }
 
-        if (gameManager.playerDied)
+        if (gameManager.playerDied && gameManager.instance.deathCount < 5)
         {
             gameOver.SetActive(true);
         }
@@ -125,15 +132,26 @@ public class ballon_movement : MonoBehaviour
     {
         gameManager.playerDied = true;
         anim.SetTrigger("shock");
+        gameManager.deathCount += 1;
+        if(gameManager.deathCount >= 5)
+        {
+            Adsmanager.instance.GameOver();
+        }
      //   player.transform.GetChild(0).SetParent(null);
     }
 
     public void playerEat()
     {
         gameManager.playerDied = true;
+        gameManager.deathCount += 1;
+        if (gameManager.deathCount >= 5)
+        {
+            Adsmanager.instance.GameOver();
+        }
         //player.transform.GetChild(0).SetParent(null);
- 
+
     }
+
 
     private void OnDrawGizmosSelected()
     {

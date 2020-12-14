@@ -6,6 +6,7 @@ public class balloonPop : MonoBehaviour
 {
     public audioManager audioMan;
     public gameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class balloonPop : MonoBehaviour
             Debug.Log("BalloonPop");
             audioMan.Play("BalloonPop");
             gameManager.updateScore();
+
             Destroy(this.gameObject);
         }
     }
