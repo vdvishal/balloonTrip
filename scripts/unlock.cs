@@ -114,6 +114,7 @@ public class unlock : MonoBehaviour
             game.unlock(num);
             CloudOnce.CloudVariables.unlocked = CloudOnce.CloudVariables.unlocked + "," + num.ToString();
             CloudOnce.CloudVariables.BalloonCoins -= 100;
+            GetComponent<purchaseManager>().balloonCoins.SetText((gameManager.instance.balloonsCoins - 100).ToString());
             CloudOnce.Cloud.Storage.Save();
         }
     }

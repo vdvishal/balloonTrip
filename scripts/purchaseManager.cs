@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +10,11 @@ public class purchaseManager : MonoBehaviour
 {
 
     public TMP_Text balloonCoins;
+    public Button rmAds;
+    public Button rmAdsbundle;
+    public Button balloon;
 
- 
+
     public void purchase(int num)
     {
         switch (num)
@@ -40,6 +45,26 @@ public class purchaseManager : MonoBehaviour
         }
 
         balloonCoins.SetText(gameManager.instance.balloonsCoins.ToString());
+
+        if (gameManager.instance.adsDeactivated)
+        {
+            rmAds.interactable = false;
+             
+        }
+
+        if(gameManager.instance.IAP == 3 || gameManager.instance.IAP == 1)
+        {
+            rmAds.interactable = false;
+            rmAdsbundle.interactable = false;
+        }
+
+        if (gameManager.instance.IAP == 2)
+        {
+            balloon.interactable = false;
+            rmAdsbundle.interactable = false;
+        }
+
+
     }
 
     public void ClickRestorePurchaseButton()

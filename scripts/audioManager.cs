@@ -7,6 +7,7 @@ public class audioManager : MonoBehaviour
 {
     public static audioManager instance = null;
 
+    private AudioSource[] audios;
     public sound[] sounds;
     sound soundPlay;
     private bool clickS;
@@ -32,34 +33,51 @@ public class audioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.volume = s.volume;
 
-            Debug.Log("--------------------------------" + s.Name);
-         }
+          }
 
-      soundPlay = Array.Find(sounds, sound => sound.Name == "loop");
+     // soundPlay = Array.Find(sounds, sound => sound.Name == "loop");
     }
 
  
 
     private void Start()
     {
+        /* 
         if (gameManager.instance.soundOn)
         {
             Play("loop");
-        }
+        } 
+        */
         
+        Debug.Log(audios.Length);
     }
 
     
     public void soundOff()
     {
+        audios = FindObjectsOfType<AudioSource>();
+        Debug.Log(audios.Length);
+
         gameManager.instance.soundOn = !gameManager.instance.soundOn;
         if (gameManager.instance.soundOn)
         {
-            Play("loop");
+    
+            foreach (AudioSource s in audios)
+            {
+                
+              s.mute = false;
+
+            }
+
         }
         else
         {
-            soundPlay.source.Stop();
+            foreach (AudioSource s in audios)
+            {
+
+                s.mute = true;
+
+            }
         }
     }
 

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6009782533460031646}
   - component: {fileID: 9143423155505334403}
   - component: {fileID: 1566368605847989843}
-  m_Layer: 0
+  - component: {fileID: 914201349751954058}
+  - component: {fileID: -652828906724100810}
+  m_Layer: 9
   m_Name: yinyang_1
-  m_TagString: Untagged
+  m_TagString: ballon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +112,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1428572, y: 1.0892857}
   m_EdgeRadius: 0
+--- !u!114 &914201349751954058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198771641203232973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbff142e2de57849ad280e1a9b386a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMan: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!50 &-652828906724100810
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198771641203232973}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: -1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &1459823695595377233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,6 +213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: threads_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390518096824067854, guid: f94ea27b01141354e9da2d00fd8870ba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f94ea27b01141354e9da2d00fd8870ba, type: 3}

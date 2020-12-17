@@ -76,12 +76,50 @@ public class iapManager : MonoBehaviour, IStoreListener
     {
         if (String.Equals(args.purchasedProduct.definition.id, "remove_ads", StringComparison.Ordinal))
         {
-            Debug.Log("remove Ads");
+            gameManager.instance.adsDeactivated = true;
+            CloudOnce.CloudVariables.IAP += 1;
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, "all_balloon_bundle", StringComparison.Ordinal))
+        {
+             
+            CloudOnce.CloudVariables.IAP += 2;
+
+            String unlock = "-1";
+            for (int i = 0; i < gameManager.instance.cosmeticsArr.Length; i++)
+            {
+                unlock += "," + i.ToString();
+            }
+
+            CloudOnce.CloudVariables.unlocked = unlock;
+            gameManager.instance.unlockedString = unlock;
+
+            gameManager.instance.updateUnlocks();
+
+
+        }
+        else if (String.Equals(args.purchasedProduct.definition.id, "remove_ads_bundle", StringComparison.Ordinal))
+        {
+
+            CloudOnce.CloudVariables.IAP += 3;
+            gameManager.instance.adsDeactivated = true;
+
+            String unlock = "-1";
+            for (int i = 0; i < gameManager.instance.cosmeticsArr.Length; i++)
+            {
+                unlock += "," + i.ToString();
+            }
+
+            CloudOnce.CloudVariables.unlocked = unlock;
+
+            gameManager.instance.unlockedString = unlock;
+
+            gameManager.instance.updateUnlocks();
         }
         else
         {
             Debug.Log("Purchase Failed");
         }
+        CloudOnce.Cloud.Storage.Save();
         return PurchaseProcessingResult.Complete;
     }
 

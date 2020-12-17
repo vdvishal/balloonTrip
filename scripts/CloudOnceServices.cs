@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CloudOnce;
+using UnityEngine.SceneManagement;
 
 public class CloudOnceServices : MonoBehaviour
 {
@@ -33,10 +34,23 @@ public class CloudOnceServices : MonoBehaviour
         Leaderboards.FlightTime.SubmitScore(time);
     }
 
+    public void submitBalloonPopToLeaderBoard(int score)
+    {
+        Leaderboards.balloonPop.SubmitScore(score);
+    }
+
     public void updateScore()
     {
-        CloudVariables.HighScores = gameManager.instance.Score;
-        CloudVariables.HighestFlightTime = gameManager.instance.FlightTime;
-        Cloud.Storage.Save();
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            CloudVariables.HighScores = gameManager.instance.Score;
+            CloudVariables.HighestFlightTime = gameManager.instance.FlightTime;
+            Cloud.Storage.Save();
+        }else
+        {
+            CloudVariables.balloonPopHighScores = gameManager.instance.Score;
+            Cloud.Storage.Save();
+        }
+
     }
 }

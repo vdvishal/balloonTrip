@@ -10,7 +10,8 @@ public class fish : MonoBehaviour
 
     public void eatPlayer()
     {
-            this.GetComponent<BoxCollider2D>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
+        audioManager.instance.Play("whale");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

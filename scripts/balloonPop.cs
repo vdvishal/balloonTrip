@@ -30,5 +30,11 @@ public class balloonPop : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+
+        if (collision.transform.CompareTag("balloonPop"))
+        {
+ 
+            Destroy(this.gameObject);
+        }
     }
 }

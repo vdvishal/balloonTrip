@@ -4,6 +4,7 @@ using UnityEngine;
 
 using TMPro;
 using CloudOnce;
+using UnityEngine.SceneManagement;
 
 public class score : MonoBehaviour
 {
@@ -23,10 +24,7 @@ public class score : MonoBehaviour
     {
         gameManager = FindObjectOfType<gameManager>();
      //   gameManager.Score = 0;
-        Score.SetText(gameManager.Score.ToString());
-        HighScore.SetText(gameManager.HighScore.ToString());
-        FlightTime.SetText(string.Format("{0:#0.0} Seconds", gameManager.FlightTime));
-        LongestFlightTime.SetText(string.Format("{0:#0.0} Seconds", gameManager.LongestFlightTime));
+ 
 
     }
 
@@ -35,20 +33,35 @@ public class score : MonoBehaviour
         Debug.Log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         gameManager = FindObjectOfType<gameManager>();
         //   gameManager.Score = 0;
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            HighScore.SetText(gameManager.HighScore.ToString());
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            HighScore.SetText(gameManager.balloonPopHighScore.ToString());
+        }
+
         Score.SetText(gameManager.Score.ToString());
-        HighScore.SetText(gameManager.HighScore.ToString());
+        
         FlightTime.SetText(string.Format("{0:#0.0} Seconds", gameManager.FlightTime));
         LongestFlightTime.SetText(string.Format("{0:#0.0} Seconds", gameManager.LongestFlightTime));
 
         CloudVariables.BalloonCoins += gameManager.Score;
         Cloud.Storage.Save();
 
-        if (gameManager.Score >= gameManager.HighScore)
+        if (gameManager.Score >= gameManager.HighScore && SceneManager.GetActiveScene().buildIndex == 5)
         {
             CloudOnceServices.instance.submitScoreToLeaderBoard(gameManager.Score);
         }
 
-        if (gameManager.FlightTime >= gameManager.LongestFlightTime)
+        if (gameManager.Score >= gameManager.HighScore && SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            CloudOnceServices.instance.submitBalloonPopToLeaderBoard(gameManager.Score);
+        }
+
+        if (gameManager.FlightTime >= gameManager.LongestFlightTime && SceneManager.GetActiveScene().buildIndex == 5)
         {
             float time = gameManager.FlightTime * 1000;
 

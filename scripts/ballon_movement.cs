@@ -76,8 +76,13 @@ public class ballon_movement : MonoBehaviour
         {
             moveRight();
         }
-
+ 
         if (gameManager.playerDied && gameManager.instance.deathCount < 5)
+        {
+            gameOver.SetActive(true);
+        }
+        
+        if (gameManager.playerDied && gameManager.instance.adsDeactivated)
         {
             gameOver.SetActive(true);
         }
@@ -114,11 +119,13 @@ public class ballon_movement : MonoBehaviour
 
     public void accelerate()
     {
+        Debug.Log(gameManager.playerDied);
+        Debug.Log(gameManager.playerDied);
         if (!gameManager.playerDied)
         {
-            player.AddForce(new Vector2(0, power * 1f * Time.deltaTime));
+            player.AddForce(new Vector2(0, power * 1f));
             anim.SetTrigger("boost");
-
+            audioManager.instance.Play("fly");
         }
 
     }
@@ -133,7 +140,7 @@ public class ballon_movement : MonoBehaviour
         gameManager.playerDied = true;
         anim.SetTrigger("shock");
         gameManager.deathCount += 1;
-        if(gameManager.deathCount >= 5)
+        if(gameManager.deathCount >= 5 && !gameManager.instance.adsDeactivated)
         {
             Adsmanager.instance.GameOver();
         }
@@ -144,7 +151,8 @@ public class ballon_movement : MonoBehaviour
     {
         gameManager.playerDied = true;
         gameManager.deathCount += 1;
-        if (gameManager.deathCount >= 5)
+
+        if (gameManager.deathCount >= 5 && !gameManager.instance.adsDeactivated)
         {
             Adsmanager.instance.GameOver();
         }
@@ -156,5 +164,11 @@ public class ballon_movement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         //Gizmos.DrawWireSphere(transform.position, 0.5f);
+    }
+
+
+    public void goBack()
+    {
+        SceneManager.LoadScene(2);
     }
 }

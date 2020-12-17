@@ -59,8 +59,8 @@ MonoBehaviour:
     volume: 0
     loop: 1
     source: {fileID: 0}
-  - Name: Click
-    Clip: {fileID: 8300000, guid: 8c258dca7e08fb1438113b0b75348f71, type: 3}
+  - Name: fly
+    Clip: {fileID: 8300000, guid: 0a850c5822b7b734b89491e6819a32f6, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
