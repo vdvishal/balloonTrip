@@ -89,7 +89,7 @@ public class balloonSpawnerCasual : MonoBehaviour
     void spawnStarsLeft()
     {
 
-        //   int rand = Random.Range(0, gameManager.instance.unlocked.Length);
+        int rand = Random.Range(0, 10);
         int randspawner = Random.Range(0, leftSpawner.Length);
 
         Debug.Log(leftSpawner.Length);
@@ -97,6 +97,10 @@ public class balloonSpawnerCasual : MonoBehaviour
         GameObject star = Instantiate(starObject, new Vector3(leftSpawner[randspawner].transform.position.x, leftSpawner[randspawner].transform.position.y), Quaternion.identity);
 
         star.GetComponent<starMoveCasual>().dirc = 1;
+        if (rand > 6)
+        {
+            star.GetComponent<Rigidbody2D>().AddForce(new Vector2(2*100f,0));
+        }
 
         starSpawnTime1 = Time.time;
 
@@ -106,13 +110,16 @@ public class balloonSpawnerCasual : MonoBehaviour
     void spawnStarsRight()
     {
 
-        //   int rand = Random.Range(0, gameManager.instance.unlocked.Length);
+        int rand = Random.Range(0, 10);
         int randspawner = Random.Range(0, rightSpawnerStars.Length);
 
         GameObject star = Instantiate(starObject, new Vector3(rightSpawnerStars[randspawner].transform.position.x, rightSpawnerStars[randspawner].transform.position.y), Quaternion.identity);
 
         star.GetComponent<starMoveCasual>().dirc = -1;
-
+        if (rand > 6)
+        {
+            star.GetComponent<Rigidbody2D>().AddForce(new Vector2(2 * 100f, 0));
+        }
         starSpawnTime2 = Time.time;
         
 

@@ -29,6 +29,7 @@ public class unlock : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,12 +110,14 @@ public class unlock : MonoBehaviour
  
     public void unlockSkin(int num)
     {
-        if(gameManager.instance.balloonsCoins > 100)
+        int co = gameManager.instance.balloonsCoins - 100;
+
+        if (gameManager.instance.balloonsCoins > 100)
         {
             game.unlock(num);
             CloudOnce.CloudVariables.unlocked = CloudOnce.CloudVariables.unlocked + "," + num.ToString();
             CloudOnce.CloudVariables.BalloonCoins -= 100;
-            GetComponent<purchaseManager>().balloonCoins.SetText((gameManager.instance.balloonsCoins - 100).ToString());
+            gameManager.instance.balloonsCoins = gameManager.instance.balloonsCoins - 100;
             CloudOnce.Cloud.Storage.Save();
         }
     }

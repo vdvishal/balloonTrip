@@ -138,6 +138,7 @@ public class Adsmanager : MonoBehaviour
         gameManager.instance.balloonsCoins += 20;
         CloudOnce.CloudVariables.BalloonCoins += 20;
         CloudOnce.Cloud.Storage.Save();
+        RewardAdFor20balloons();
     }
 
 }

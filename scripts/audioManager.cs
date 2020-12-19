@@ -49,8 +49,7 @@ public class audioManager : MonoBehaviour
         } 
         */
         
-        Debug.Log(audios.Length);
-    }
+     }
 
     
     public void soundOff()

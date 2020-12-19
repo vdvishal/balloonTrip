@@ -32,6 +32,7 @@ public class gameManager : MonoBehaviour
 
     public Sprite defaultBalloon;
 
+    public bool continueGame;
     // cloud variables
     public int balloonsCoins;
 
@@ -62,6 +63,7 @@ public class gameManager : MonoBehaviour
             Destroy(gameObject);
         }
         soundOn = true;
+        continueGame = false;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -81,6 +83,7 @@ public class gameManager : MonoBehaviour
         Cloud.OnCloudLoadComplete += CloudLoadComplete;
         Cloud.Initialize(true, true);
         waitStartTime = Time.time;
+        continueGame = false;
 
     }
 
@@ -153,22 +156,32 @@ public class gameManager : MonoBehaviour
 
     public void startGame()
     {
+        audioManager.instance.Play("tran");
         SceneManager.LoadScene(2);
+ 
+
     }
 
     public void loadIAP()
     {
+        audioManager.instance.Play("tran");
         SceneManager.LoadScene(3);
+ 
+
     }
 
     public void ChangeScene(int num)
     {
+        audioManager.instance.Play("tran");
         SceneManager.LoadScene(num);
+ 
+
     }
 
 
     public void restartGame()
     {
+
  
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -186,6 +199,8 @@ public class gameManager : MonoBehaviour
         SceneManager.LoadScene(1);
         FlightTime = 0;
         Score = 0;
+ 
+
     }
 
     public void updateScore()
@@ -210,9 +225,15 @@ public class gameManager : MonoBehaviour
         selectedBalloon = spritesBalloon[num];
 
         cosmeticsSelectedNum = num;
+        CloudVariables.selectedBalloon = num;
+        Cloud.Storage.Save();
     }
 
 
+    private void save()
+    {
+
+    }
 
     
 }

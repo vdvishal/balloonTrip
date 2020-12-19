@@ -2,41 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class starMove : MonoBehaviour
+public class starMoveCasual : MonoBehaviour
 {
-    public float moveSpeed;
-    float rand1;
-    float rand2;
+    public float dirc;
     private levelManager player;
     private audioManager audioMan;
     private bool hit = false;
-    // Start is called before the first frame update
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         audioMan = FindObjectOfType<audioManager>();
-        rand1 = Random.Range(-1, 2);
-          rand2 = Random.Range(-1, 2);
-
-        GetComponent<Rigidbody2D>().velocity = (new Vector2(rand1*moveSpeed,rand2*moveSpeed)*Time.deltaTime);
+ 
+        GetComponent<Rigidbody2D>().velocity = (new Vector2(dirc * moveSpeed, 0 * moveSpeed) * Time.deltaTime);
         player = FindObjectOfType<levelManager>();// GetComponent<ballon_movement>();
-
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        rand1 = Random.Range(-1, 2);
-        rand2 = Random.Range(-1, 2);
-
         Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 0.3f);
 
         foreach (var item in col)
         {
-            if (item.CompareTag("Respawn"))
-            {
-                GetComponent<Rigidbody2D>().velocity = (new Vector2(rand1 * moveSpeed, rand2 * moveSpeed) * Time.deltaTime);
-            }
 
             if (item.CompareTag("Player") && !hit)
             {
@@ -44,10 +33,12 @@ public class starMove : MonoBehaviour
                 player.playerHit();
                 audioMan.Play("electrocute");
             }
+
+            if (item.CompareTag("Respawn"))
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
-
- 
-    // Update is called once per frame
-
 }

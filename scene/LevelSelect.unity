@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balloon Pop
+  m_text: Balloon Chase
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0c7db937987d274180946d5afd8c529, type: 2}
   m_sharedMaterial: {fileID: 3596584745252785289, guid: d0c7db937987d274180946d5afd8c529,

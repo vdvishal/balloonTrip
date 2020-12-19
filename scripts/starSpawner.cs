@@ -31,7 +31,7 @@ public class starSpawner : MonoBehaviour
             lastTime = Time.time;
         }
 
-        if (Time.time - lastTime2 > 8 && star2 != null && star1 != null)
+        if (Time.time - lastTime2 > 6 && star2 != null && star1 != null)
         {
             int rand = Random.Range(0,12);
             int rand2 = Random.Range(-2, 2);

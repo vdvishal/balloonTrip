@@ -115,6 +115,12 @@ public class iapManager : MonoBehaviour, IStoreListener
 
             gameManager.instance.updateUnlocks();
         }
+        else if (String.Equals(args.purchasedProduct.definition.id, "balloon_1000", StringComparison.Ordinal))
+        {
+            gameManager.instance.balloonsCoins += 1000;
+            CloudOnce.CloudVariables.BalloonCoins += 1000;
+            CloudOnce.Cloud.Storage.Save();
+        }
         else
         {
             Debug.Log("Purchase Failed");

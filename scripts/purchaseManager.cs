@@ -38,12 +38,12 @@ public class purchaseManager : MonoBehaviour
 
     void Start()
     {
-        if (Application.platform != RuntimePlatform.IPhonePlayer ||
+ /*       if (Application.platform != RuntimePlatform.IPhonePlayer ||
             Application.platform != RuntimePlatform.OSXPlayer)
         {
             gameObject.SetActive(false);
         }
-
+        */
         balloonCoins.SetText(gameManager.instance.balloonsCoins.ToString());
 
         if (gameManager.instance.adsDeactivated)
@@ -64,6 +64,13 @@ public class purchaseManager : MonoBehaviour
             rmAdsbundle.interactable = false;
         }
 
+        if (gameManager.instance.IAP == 3 )
+        {
+            rmAds.interactable = false;
+            balloon.interactable = false;
+            rmAdsbundle.interactable = false;
+        }
+
 
     }
 
@@ -80,5 +87,10 @@ public class purchaseManager : MonoBehaviour
     public void back()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void Update()
+    {
+        balloonCoins.SetText(gameManager.instance.balloonsCoins.ToString());
     }
 }
