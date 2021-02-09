@@ -35,9 +35,9 @@ public class Adsmanager : MonoBehaviour
     private void RequestInterstitial()
     {
         #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-9832492835389318/2379083304";
+         
 #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+     
 #else
             string adUnitId = "unexpected_platform";
 #endif
@@ -84,9 +84,9 @@ public class Adsmanager : MonoBehaviour
     public void RewardAdFor20balloons()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-9832492835389318/7719626628";
+        
 #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+           
 #else
             string adUnitId = "unexpected_platform";
 #endif
